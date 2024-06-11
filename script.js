@@ -21,6 +21,22 @@ function parseDate(dateString) {
     return new Date(dateString);
 }
 
+function copyToClipboard(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+}
+
+function marcarComoConcluido(event) {
+    const li = event.target;
+    li.style.textDecoration = 'line-through';
+    const projectName = li.textContent.replace(/-/g, '').trim();
+    copyToClipboard(projectName);
+}
+
 function compararProjetos() {
     const web4Content = document.getElementById('web4TextArea').value;
     const demoContent = document.getElementById('demoTextArea').value;
@@ -65,6 +81,7 @@ function compararProjetos() {
         projetosBack.forEach(projeto => {
             const li = document.createElement('li');
             li.textContent = projeto;
+            li.addEventListener('click', marcarComoConcluido);
             resultadoUl.appendChild(li);
         });
     }
@@ -77,6 +94,7 @@ function compararProjetos() {
         projetosFront.forEach(projeto => {
             const li = document.createElement('li');
             li.textContent = projeto;
+            li.addEventListener('click', marcarComoConcluido);
             resultadoUl.appendChild(li);
         });
     }
