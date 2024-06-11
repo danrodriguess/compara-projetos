@@ -33,7 +33,7 @@ function copyToClipboard(text) {
 function marcarComoConcluido(event) {
     const li = event.target;
     li.style.textDecoration = 'line-through';
-    const projectName = li.textContent.replace(/-/g, ' ').trim();
+    const projectName = li.textContent.replace(/-|_/g, ' ').trim();
     copyToClipboard(projectName);
 }
 
