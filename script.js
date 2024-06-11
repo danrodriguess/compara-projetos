@@ -33,7 +33,7 @@ function copyToClipboard(text) {
 function marcarComoConcluido(event) {
     const li = event.target;
     li.style.textDecoration = 'line-through';
-    const projectName = li.textContent.replace(/-/g, '').trim();
+    const projectName = li.textContent.replace(/-/g, ' ').trim();
     copyToClipboard(projectName);
 }
 
@@ -60,7 +60,7 @@ function compararProjetos() {
 
     const projetosFront = [];
     const projetosBack = [];
-    const frontKeywords = ["front", "app", "assets", "portal"];
+    const frontKeywords = ["front", "app", "assets", "ipaam"];
 
     projetosDesatualizados.forEach(projeto => {
         if (frontKeywords.some(keyword => projeto.toLowerCase().includes(keyword))) {
