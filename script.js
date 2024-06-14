@@ -60,7 +60,7 @@ function compararProjetos() {
 
     const projetosFront = [];
     const projetosBack = [];
-    const frontKeywords = ["front", "app", "assets", "ipaam", "slim-app"];
+    const frontKeywords = ["front", "app", "assets", "ipaam", "slim-portal"];
 
     projetosDesatualizados.forEach(projeto => {
         if (frontKeywords.some(keyword => projeto.toLowerCase().includes(keyword))) {
