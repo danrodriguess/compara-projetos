@@ -76,7 +76,7 @@ function compararProjetos() {
     // Adiciona título e projetos de back
     if (projetosBack.length > 0) {
         const backTitle = document.createElement('h3');
-        backTitle.textContent = 'Projetos de Back';
+        backTitle.textContent = `Projetos de Back(${projetosBack.length})`;
         resultadoUl.appendChild(backTitle);
         projetosBack.forEach(projeto => {
             const li = document.createElement('li');
@@ -89,7 +89,7 @@ function compararProjetos() {
     // Adiciona título e projetos de front
     if (projetosFront.length > 0) {
         const frontTitle = document.createElement('h3');
-        frontTitle.textContent = 'Projetos de Front';
+        frontTitle.textContent = `Projetos de Front(${projetosFront.length})`;
         resultadoUl.appendChild(frontTitle);
         projetosFront.forEach(projeto => {
             const li = document.createElement('li');
